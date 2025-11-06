@@ -16,5 +16,11 @@
     "url": "https://github.com/VinothKumar210/CricketScorer/issues"
   },
   "homepage": "https://github.com/VinothKumar210/CricketScorer#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3"
+  }
 }
