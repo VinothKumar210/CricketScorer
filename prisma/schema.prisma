@@ -1,0 +1,29 @@
+datasource db{
+    provider = "mongodb"
+    url = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Team {
+    id String @id @map("_id) @default(auto()) @db.ObjestId
+    name String
+    match Match[]
+}
+
+model Match {
+  id        String  @id @map("_id") @default(auto()) @db.ObjectId
+  teamA     Team    @relation(fields: [teamAId], references: [id])
+  teamAId   String
+  teamB     Team    @relation(fields: [teamBId], references: [id])
+  teamBId   String
+  runsA     Int
+  wicketsA  Int
+  oversA    Float
+  runsB     Int
+  wicketsB  Int
+  oversB    Float
+  createdAt DateTime @default(now())
+}
