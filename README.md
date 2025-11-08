@@ -1,3 +1,3 @@
-# CricScore
+# Cricket Scorer
 
-A cricket scoring application built with TypeScript, React, Tailwind CSS, tRPC, and Prisma.
+A modern cricket scoring application.
