@@ -123,9 +123,12 @@ export default function TeamDetailPage({ params }: { params: { id: string } }) {
               <li key={player.id}>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-medium text-indigo-600 truncate">
+                    <Link 
+                      href={`/teams/${params.id}/players/${player.id}`}
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-500 truncate"
+                    >
                       {player.name}
-                    </p>
+                    </Link>
                     <div className="ml-2 flex-shrink-0 flex">
                       <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                         {player.role}
