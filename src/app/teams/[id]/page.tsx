@@ -109,12 +109,12 @@ export default function TeamDetailPage({ params }: { params: { id: string } }) {
       <div className="mt-8">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-medium text-gray-900">Squad</h3>
-          <button
-            type="button"
-            className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          <Link
+            href={`/teams/${params.id}/add-player`}
+            className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Add Player
-          </button>
+          </Link>
         </div>
         
         <div className="bg-white shadow overflow-hidden sm:rounded-md">
