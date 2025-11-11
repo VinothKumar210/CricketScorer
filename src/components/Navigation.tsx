@@ -6,10 +6,10 @@ import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outlin
 import Link from 'next/link';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Matches', href: '/matches' },
-  { name: 'Teams', href: '/teams' },
-  { name: 'Players', href: '/players' },
+  { name: 'Home', href: '/', current: false },
+  { name: 'Matches', href: '/matches', current: false },
+  { name: 'Teams', href: '/teams', current: false },
+  { name: 'Players', href: '/players', current: false },
 ];
 
 function classNames(...classes: string[]) {
