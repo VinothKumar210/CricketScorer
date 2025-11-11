@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Matches', href: '/matches', current: false },
   { name: 'Teams', href: '/teams', current: false },
   { name: 'Players', href: '/players', current: false },
+  { name: 'Compare', href: '/compare', current: false },
 ];
 
 function classNames(...classes: string[]) {
