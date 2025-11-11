@@ -34,91 +34,6 @@ const getPlayerDetails = (teamId: string, playerId: string) => {
           sixes: 100,
           economy: 6.50,
           catches: 50,
-          runsConceded: 320,
-          fiveWickets: 0,
-          stumpings: 0,
-          recentMatches: [
-            {
-              id: '1',
-              opponent: 'Chennai Super Kings',
-              date: '2023-05-12',
-              venue: 'Wankhede Stadium',
-              runs: 56,
-              balls: 32,
-              fours: 6,
-              sixes: 3,
-              wickets: 0,
-              overs: 0,
-              runsConceded: 0,
-              economy: 0,
-              result: 'Won by 5 wickets',
-              isHome: true
-            },
-            {
-              id: '2',
-              opponent: 'Royal Challengers Bangalore',
-              date: '2023-05-05',
-              venue: 'M. Chinnaswamy Stadium',
-              runs: 12,
-              balls: 8,
-              fours: 2,
-              sixes: 0,
-              wickets: 1,
-              overs: 2,
-              runsConceded: 18,
-              economy: 9.0,
-              result: 'Lost by 12 runs',
-              isHome: false
-            },
-            {
-              id: '3',
-              opponent: 'Delhi Capitals',
-              date: '2023-04-28',
-              venue: 'Wankhede Stadium',
-              runs: 78,
-              balls: 45,
-              fours: 8,
-              sixes: 4,
-              wickets: 0,
-              overs: 0,
-              runsConceded: 0,
-              economy: 0,
-              result: 'Won by 8 wickets',
-              isHome: true
-            },
-            {
-              id: '4',
-              opponent: 'Punjab Kings',
-              date: '2023-04-22',
-              venue: 'Punjab Cricket Stadium',
-              runs: 34,
-              balls: 28,
-              fours: 5,
-              sixes: 1,
-              wickets: 0,
-              overs: 0,
-              runsConceded: 0,
-              economy: 0,
-              result: 'Lost by 4 wickets',
-              isHome: false
-            },
-            {
-              id: '5',
-              opponent: 'Rajasthan Royals',
-              date: '2023-04-15',
-              venue: 'Wankhede Stadium',
-              runs: 22,
-              balls: 15,
-              fours: 3,
-              sixes: 1,
-              wickets: 2,
-              overs: 3,
-              runsConceded: 24,
-              economy: 8.0,
-              result: 'Won by 14 runs',
-              isHome: true
-            }
-          ]
         },
       ],
     },
@@ -400,43 +315,6 @@ export default function PlayerDetailPage({ params }: { params: { id: string, pla
               </div>
             </div>
           )}
-        </div>
-
-        {/* Recent Performances */}
-        <div className="mt-8">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Recent Performances</h3>
-          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-            <ul className="divide-y divide-gray-200">
-              {player.recentMatches?.length > 0 ? (
-                player.recentMatches.map((match, index) => (
-                  <li key={index} className="px-4 py-4 sm:px-6 hover:bg-gray-50">
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-indigo-600 truncate">
-                          {match.opponent}
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          {match.date} • {match.venue}
-                        </p>
-                      </div>
-                      <div className="ml-4 flex-shrink-0">
-                        <div className="text-sm text-gray-900 font-medium">
-                          {match.runs} runs {match.wickets ? ` & ${match.wickets} wkts` : ''}
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {match.result}
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))
-              ) : (
-                <div className="text-center py-8">
-                  <p className="text-sm text-gray-500">No recent match data available</p>
-                </div>
-              )}
-            </ul>
-          </div>
         </div>
       </div>
     </div>
