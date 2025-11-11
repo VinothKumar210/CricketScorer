@@ -29,6 +29,11 @@ const getPlayerDetails = (teamId: string, playerId: string) => {
           strikeRate: 130.82,
           fifties: 34,
           hundreds: 1,
+          notOuts: 20,
+          fours: 500,
+          sixes: 100,
+          economy: 6.50,
+          catches: 50,
         },
       ],
     },
@@ -142,6 +147,95 @@ export default function PlayerDetailPage({ params }: { params: { id: string, pla
               </dd>
             </div>
           </dl>
+        </div>
+
+        {/* Player Statistics */}
+        <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+          <div className="px-4 py-5 sm:px-6">
+            <h3 className="text-lg font-medium leading-6 text-gray-900">Career Statistics</h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 pb-5 sm:px-6">
+            {/* Batting Stats */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="text-sm font-medium text-gray-500 mb-3">Batting</h4>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Matches</span>
+                  <span className="text-sm font-medium">{player.matches}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Runs</span>
+                  <span className="text-sm font-medium">{player.runs?.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Highest Score</span>
+                  <span className="text-sm font-medium">{player.highestScore || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Average</span>
+                  <span className="text-sm font-medium">{player.average?.toFixed(2) || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Strike Rate</span>
+                  <span className="text-sm font-medium">{player.strikeRate?.toFixed(2) || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">50s/100s</span>
+                  <span className="text-sm font-medium">{player.fifties || 0}/{player.hundreds || 0}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bowling Stats */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="text-sm font-medium text-gray-500 mb-3">Bowling</h4>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Wickets</span>
+                  <span className="text-sm font-medium">{player.wickets || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Best Bowling</span>
+                  <span className="text-sm font-medium">{player.bestBowling || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Average</span>
+                  <span className="text-sm font-medium">{(player.wickets && player.runsConceded) ? (player.runsConceded / player.wickets).toFixed(2) : '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Economy</span>
+                  <span className="text-sm font-medium">{player.economy?.toFixed(2) || '-'}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">5 Wickets</span>
+                  <span className="text-sm font-medium">{player.fiveWickets || 0}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Fielding & Other Stats */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="text-sm font-medium text-gray-500 mb-3">Fielding & More</h4>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Catches</span>
+                  <span className="text-sm font-medium">{player.catches || 0}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Stumpings</span>
+                  <span className="text-sm font-medium">{player.stumpings || 0}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">Not Outs</span>
+                  <span className="text-sm font-medium">{player.notOuts || 0}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">4s/6s</span>
+                  <span className="text-sm font-medium">{player.fours || 0}/{player.sixes || 0}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
