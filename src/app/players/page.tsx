@@ -89,6 +89,15 @@ export default function PlayersPage() {
           <p className="mt-2 text-sm text-gray-500">
             Search and view player profiles across all teams
           </p>
+          <div className="mt-4">
+            <Link
+              href="/players/compare"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <ArrowsRightLeftIcon className="-ml-1 mr-2 h-5 w-5" />
+              Compare Players
+            </Link>
+          </div>
         </div>
 
         {/* Search Bar */}
