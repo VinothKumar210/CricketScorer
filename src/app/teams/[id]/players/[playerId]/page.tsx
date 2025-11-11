@@ -3,6 +3,13 @@
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { PencilIcon, UserIcon } from '@heroicons/react/24/outline';
+import dynamic from 'next/dynamic';
+
+// Dynamically import PerformanceChart with no SSR to avoid window is not defined error
+const PerformanceChart = dynamic(
+  () => import('@/components/PerformanceChart'),
+  { ssr: false }
+);
 
 // Mock data - in a real app, this would come from an API
 const getPlayerDetails = (teamId: string, playerId: string) => {
@@ -438,6 +445,11 @@ export default function PlayerDetailPage({ params }: { params: { id: string, pla
             </ul>
           </div>
         </div>
+
+        {/* Performance Trends Chart */}
+        {player.recentMatches?.length > 0 && (
+          <PerformanceChart matches={player.recentMatches} />
+        )}
       </div>
     </div>
   );
