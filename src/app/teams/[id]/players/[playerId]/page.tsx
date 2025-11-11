@@ -430,8 +430,17 @@ export default function PlayerDetailPage({ params }: { params: { id: string, pla
                         <div className="text-sm text-gray-900 font-medium">
                           {match.runs} runs {match.wickets ? ` & ${match.wickets} wkts` : ''}
                         </div>
-                        <div className="text-sm text-gray-500">
-                          {match.result}
+                        <div className="flex space-x-2">
+                          <span className="text-sm text-gray-500">
+                            {match.result}
+                          </span>
+                          <Link 
+                            href={`/matches/${match.id}`}
+                            className="text-xs text-indigo-600 hover:text-indigo-500"
+                            title="View match details"
+                          >
+                            Details →
+                          </Link>
                         </div>
                       </div>
                     </div>
