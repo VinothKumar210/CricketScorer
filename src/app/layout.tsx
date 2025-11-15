@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Cricket Scorer',
-  description: 'A modern cricket scoring application',
+  description: 'A modern cricket scoring application create by Vinothkumar M',
 };
 
 export default function RootLayout({
